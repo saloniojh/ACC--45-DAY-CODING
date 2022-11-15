@@ -1,0 +1,37 @@
+#include <iostream.h>
+using namespace std;
+bool isEqual(vector<int> a, vector<int> b, int n, int m)
+{if (n != m) 
+{
+		return 0;
+	}
+	unordered_map<int, int> mp1, mp2;
+	for (int i : a) {
+		mp1[i]++;
+	}
+	for (int i : b) {
+		mp2[i]++;
+	}
+	for (auto i = mp1.begin(); i != mp1.end(); i++) {
+		if (mp2[i->first] != i->second) {
+			return 0;
+		}
+	}
+	return 1;
+}
+int main()
+{
+	vector<int> a = { 2, 4, 5, 7, 5, 6 },
+				b = { 4, 2, 5, 5, 6, 7 };
+	int n = a.size(), m = b.size();
+	bool flag = isEqual(a, b, n, m);
+
+	// Return 1 if equal
+	if (flag) {
+		cout << "YES\n";
+	}
+	else {
+		cout << "NO\n";
+	}
+	return 0;
+}

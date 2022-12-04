@@ -1,0 +1,25 @@
+// Program to check if a character is in 
+// lowercase using islower()
+#include <iostream>
+#include <cctype>
+
+using namespace std;
+
+int main()
+{
+
+    char x;
+
+    cin >> x;
+
+    if (islower(x)) 
+
+        cout << "Lowercase";
+
+    else
+
+        cout << "Not Lowercase.";    
+ 
+
+    return 0;
+}
